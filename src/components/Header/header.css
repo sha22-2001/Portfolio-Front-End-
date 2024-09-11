@@ -1,0 +1,57 @@
+:root{
+    --text__colour:white;
+    --button__background:#323232;
+    --option__colour:#827f7f;
+}
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1% 15%;
+    box-sizing: border-box;
+}
+.Logo{
+    box-sizing: border-box;
+    width: 10%;
+    img{
+        width: 100%;
+    }
+}
+.Option{
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40%;
+    a{
+        text-decoration: none;
+        color: var(--option__colour);
+        font-family:'Courier New', Courier, monospace;
+        transition: background-color 0.1s ease, color 0.2s ease;
+    }
+    a:hover{
+        color: var(--text__colour);
+    }
+}
+.lets__talk{
+    box-sizing:border-box;
+    button{
+        border: none;
+        background: none;
+        border-radius: 20px;
+        padding:15px 20px;
+        color: var(--text__colour);
+        background-color: var(--button__background);
+        cursor: pointer;
+        outline: none;
+        box-shadow: none;
+        display: inline-block;
+        font-family: 'Courier New', Courier, monospace;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    button:hover{
+        background-color: var(--text__colour);
+        color: var(--button__background);
+    }
+}
