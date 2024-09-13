@@ -1,0 +1,138 @@
+.Works {
+    padding: 1% 5%;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: 70px repeat(5, 100px);
+    column-gap: 1vw;
+    grid-template-areas: 
+        "heading display"
+        "project1 display"
+        "project2 display"
+        "project3 display"
+        "project4 display"
+        "project5 display";
+}
+
+.heading {
+    grid-area: heading;
+    color: white;
+    text-align: start;
+    text-transform: none;
+    justify-content: start;
+    text-decoration: underline;
+    padding-left: 20px;
+}
+.project1{
+    border-radius: 15px 15px 0 0;
+}
+.project5{
+    border-radius: 0 0 15px 15px;
+}
+.display {
+    padding: 5px;
+    grid-area: display;
+    background-color: transparent;
+    border-radius: 10px;
+    border: 1px solid white;
+    background: white;
+}
+
+/* Combine project classes to set height and grid areas */
+[class^="project"] {
+    height: 100%;
+}
+
+.tecnology{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 5px;
+    img{
+        width: 30px;
+        height: 30px;
+    }
+}
+.project__option{
+    font-family: 'Courier New', Courier, monospace;
+    background: linear-gradient(310deg, #131313 0%, #202020 100%);
+    border: 1px solid white;
+    color: white;
+    padding: 30px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    h1{
+        width: 100%;
+        font-size: 25px;
+    }
+    button{
+        font-size: 60px;
+        color: var(--content__colour);
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+    button:hover{
+        color:white;
+    }
+}
+/* Define the keyframes for the slide-in animation */
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100%); /* Start from off-screen to the right */
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0); /* Move to its normal position */
+        opacity: 1;
+    }
+}
+
+/* Basic styling for the element */
+.github__source__code {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    top: 25px;
+    right: 0;
+    width: 200px;
+    height: 80px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    background-color: white;
+    border-radius: 50px 0 0 50px;
+    transform: translateX(100%); /* Initially off-screen to the right */
+    opacity: 0; /* Initially invisible */
+    animation: slideInFromRight 0.5s ease forwards; /* Animation */
+}
+
+/* Hover effect */
+.github__source__code:hover {
+    background-color: greenyellow;
+}
+
+.github__source__code p {
+    font-family: 'Courier New', Courier, monospace;
+    width: 50%;
+    padding: 5px;
+    box-sizing: border-box;
+    color: black;
+}
+
+.github__source__code .github_icon {
+    color: black;
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+    margin: 10px;
+    box-sizing: border-box;
+    border-radius: 50%;
+}
+
+.github__source__code .github_icon:hover {
+    background-color: black;
+    color: white;
+}
