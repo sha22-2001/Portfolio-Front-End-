@@ -2,6 +2,7 @@ import React from 'react'
 import './header.css'
 import images from '../../assets/image/image'
 import './header.css'
+import { Link } from 'react-router-dom';
 function header() {
   return (
     <div className='header'>
@@ -9,9 +10,9 @@ function header() {
             <img src={images.logo} alt="" />
         </div>
         <div className='Option'>
-            <a href="#">About</a>
-            <a href="#">Works</a>
-            <a href="#">Contact</a>
+          <Link to="/about">About</Link>
+          <Link to="/works">Works</Link>
+          <Link to="/contact">Contact</Link>
         </div>
         <div className='lets__talk'>
           <button>Let's Connect</button>
