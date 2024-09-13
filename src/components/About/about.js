@@ -31,7 +31,7 @@ function about() {
       <div className="background__colour overflow__scroll self__summary">
         <img src={images.star2} className='star__background' alt='*'/>
         <h1>Shayan Hore</h1>
-        <p>I am a Computer Science Engineering graduate from SRM University with a specialization in Cloud Computing. I have hands-on experience in full-stack development using the MERN stack, machine learning with YOLOv8, and cloud computing. My skill set includes creating responsive web applications, managing databases, and working with version control systems. I am passionate about leveraging technology to solve complex problems and continuously enhance my technical expertise.</p>
+        <p>I'm a CSE graduate with a specialization in Cloud Computing, skilled in full-stack development (MERN), YOLOv8, and cloud computing. I build responsive web apps, manage databases, and use version control to solve technical problems.</p>
       </div>
       <div className="background__colour overflow__scroll skills">
         <img src={images.star2} className='star__background' alt='*'/>
