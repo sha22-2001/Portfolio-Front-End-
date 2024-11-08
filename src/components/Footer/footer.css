@@ -1,18 +1,10 @@
 :root{
     --font:white;
 }
-body {
-    position: relative;
-    min-height: 100vh; 
-    margin: 0;
-    padding-bottom: 60px; 
-    box-sizing: border-box;
-}
 .footer{
+    bottom: 0;
     padding: 1%;
     box-sizing: border-box;
-    position:absolute;
-    bottom: 0;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -29,4 +21,32 @@ body {
 }
 p{
     color: var(--font);
+    font-size: 1vw;
+}
+
+@media (max-width:1024px)
+{
+    .footer{
+        
+        bottom: 0;
+        padding: 0;
+        box-sizing: border-box;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .Logo{
+        display: flex;
+            align-items: center;
+            justify-content: center;
+        img{
+            width: 20vw;
+        }
+    }
+    p{
+        color: var(--font);
+        font-size: 2vw;
+    }
 }

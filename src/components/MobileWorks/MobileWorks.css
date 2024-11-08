@@ -1,0 +1,40 @@
+:root{
+    --box__background: linear-gradient(310deg, #131313 0%, #202020 100%);
+    --heading__colour:white;
+    --content__colour:#989598;
+    --project__background:rgba(35, 35, 41, 0.993);
+}
+.Mobile__Project{
+    margin-top: 12vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: var(--heading__colour);
+    box-sizing: border-box;
+    h3{
+        color: var(--heading__colour);
+    }
+}
+.Errot__Mobile{
+    width: 75%;
+    height: 75vh;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--project__background);
+    box-sizing: border-box;
+    padding: 5vw;
+    margin: 0 5vw 5vw 5vw;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    .error__lock{
+        color: red;
+    }
+    h3{
+        font-size: 2rem;
+        font-family: "Inter", Sans-serif;
+    }
+}

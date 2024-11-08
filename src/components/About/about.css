@@ -5,11 +5,12 @@
 }
 .About {
     width: 100%;
+    height: 100vh;
     padding: 1% 15%;
     box-sizing: border-box;
     display: grid;
-    grid-template-rows: 60px 190px 300px 250px;
-    grid-template-columns: repeat(4, 250px);
+    grid-template-rows: 10% 30% 45% 35%;
+    grid-template-columns: repeat(4, 25%);
     gap: 1vw;
     grid-template-areas: 
     "   item1   heading   heading   heading"
@@ -17,6 +18,7 @@
     "   item3   item3   item4   item4"
     "   item5   item6   item6   item7"
     ;
+    margin-bottom: 25vh;
 }
 .background__colour{
     position: relative;
@@ -35,6 +37,7 @@
     opacity: 30%;
     position: absolute;
     top: 0;
+    width: 2vw;
 }
 .heading{
     color: var(--heading__colour);
@@ -49,6 +52,10 @@
     align-items: center;
     justify-content: center;
     gap: 5px;
+    img{
+        width: 4vw;
+        height: 4vw;
+    }
 }
 
 .profile__photo {
@@ -69,14 +76,14 @@
     .status {
         width: 50%;
         position: absolute;
-        bottom: 10px; /* Distance from the bottom */
+        bottom: 1vw; /* Distance from the bottom */
         left: 50%; /* Center horizontally */
         transform: translateX(-50%); /* Adjust to center the element */
         background: green;
         color: white; /* Text color */
-        padding: 5px 15px;
+        padding: 0.3vw 1vw;
         border-radius: 20px; /* Rounded corners */
-        font-size: 14px; /* Font size */
+        font-size: 1vw; /* Font size */
         font-weight: bold; /* Bold text */
         font-family: "Inter", Sans-serif; /* Font family */
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Shadow for a lifted effect */
@@ -84,10 +91,9 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        text-align: center;
     }
 }
-
-
 
 .self__summary{
     background: var(--box__background);
@@ -96,7 +102,7 @@
     h1{
         color: var(--heading__colour);
         font-family: "Inter", Sans-serif;
-        font-size: 30px;
+        font-size: 2vw;
         font-weight: 500;
         text-transform: uppercase;
         line-height: 2em;
@@ -105,15 +111,18 @@
     p{
         color: var(--content__colour);
         font-family: "Inter", Sans-serif;
-        font-size: 20px;
+        font-size: 1.5vw;
         font-weight: 400;
     }
 }
 .skills{
+    padding: 1vw;
+    box-sizing: border-box;
     grid-area: item3;
     color: var(--heading__colour);
     font-family: "Inter", Sans-serif;
     h1{
+        font-size: 2.5vw;
         margin-left: 0.5vw;
         margin-bottom: 0.5vw;
     }
@@ -129,18 +138,21 @@
             text-decoration: underline;
             p{
                 text-align: center;
+                font-size: 1vw;
             }
         }
         img{
             object-fit: contain;
             object-position: center;
-            width: 60px;
-            height: 60px;
+            width: 5vw;
+            height: 5vw;
             border-radius: 50%;
         }  
     }
 }
 .education{
+    padding: 1vw;
+    box-sizing: border-box;
     grid-area: item4;
     color: var(--heading__colour);
     font-family: "Inter", Sans-serif;
@@ -148,6 +160,7 @@
         right: 20px;
     }
     h1{
+        font-size: 2.5vw;
         margin-left: 0.5vw;
     }
     div{
@@ -156,6 +169,14 @@
         padding: 3%;
         box-sizing: border-box;
         border-radius: 15px;
+        p{
+            color: var(--content__colour);
+            font-size: 0.9vw;
+            font-weight: bold;
+        }
+        h3{
+            font-size: 1.3vw;
+        }
     }
 }
 .social__media{
@@ -200,7 +221,7 @@
         color: #0A58CA;
     }
     button {
-        font-size: 60px;
+        font-size: 5vw;
         padding: 15px 35px; 
         display: flex;
         align-items: center;
@@ -212,9 +233,8 @@
         background-color: transparent;
         color: var(--content__colour);
         position: absolute;
-        right: 0;
-        bottom: 25px;
-        right: 25px;
+        bottom: 2vw;
+        right: 3vw;
         cursor: pointer;
     }
     button:hover{
@@ -251,3 +271,266 @@
     }
 }
 
+  
+  /* Mobile view (max-width 768px) */
+  @media (max-width:1024px) {
+    .About {
+        width: 100%;
+      height: auto;
+      margin-top: 12vh;
+      padding: 2% 5%;
+      margin-bottom: 2vh;
+      grid-template-rows: auto; /* Allow automatic row sizing */
+      grid-template-columns: 1fr; /* Single-column layout for mobile */
+      grid-template-areas: 
+        "heading"
+        "item1"
+        "item2"
+        "item3"
+        "item4"
+        "item5"
+        "item7"
+        "item6";
+    }
+    .profile__photo {
+        padding: 5vw;
+        .status {
+          width: 60%; /* Make the status wider on mobile */
+          font-size: 3rem; /* Reduce font size more */
+          padding: 3px 10px; /* Adjust padding */
+        }
+    }
+
+    .skills{
+        height: auto;
+        padding: 5vw;
+        grid-area: item3;
+        color: var(--heading__colour);
+        font-family: "Inter", Sans-serif;
+        h1{
+            margin-left: 5vw;
+            margin-bottom: 2vw;
+            font-size: 4rem;
+        }
+        .skills__tecnology{
+            margin-left: 2vw;
+            padding: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            div{
+                font-style: italic;
+                font-family: 'Courier New', Courier, monospace;
+                font-weight: bold;
+                text-decoration: underline;
+                p{
+                    text-align: center;
+                    font-size: 2rem;
+                }
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            img{
+                object-fit: contain;
+                object-position: center;
+                width: 12vw;
+                height: 12vw;
+                border-radius: 50%;
+            }  
+        }
+    }
+    
+
+    .education{
+        height: auto;
+        padding: 5vw;
+        grid-area: item4;
+        color: var(--heading__colour);
+        font-family: "Inter", Sans-serif;
+        img{
+            right: 20px;
+        }
+        h1{
+            margin-left: 5vw;
+            margin-bottom: 2vw;
+            font-size: 4rem;
+        }
+        div{
+            width: 90%;
+            margin: 1vw 1vw 1vw 8vw;
+            padding: 3%;
+            box-sizing: border-box;
+            border-radius: 15px;
+            font-size: 2.5rem;
+            p{
+                color: var(--content__colour);
+                font-size: 2.2rem;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .social__media{
+        grid-area: item5;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        .Linkedin{
+            color: var(--content__colour);
+            cursor: pointer;
+            width: 20rem;
+            height: 20rem;
+        }
+        .Linkedin:hover{
+            color:#0A58CA ;
+        }
+        p{
+            font-size: 5rem;
+            font-family: 'Courier New', Courier, monospace;
+            font-style: italic;
+        }
+        div{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    .Resume{
+        padding: 5vw;
+        box-sizing: border-box;
+        grid-area: item7;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 25px;
+        .pdf_icon{
+            color: var(--content__colour);
+            width: 15rem;
+            height: 15rem;
+        }
+        .pdf_icon:hover{
+            color: red;
+        }
+        button{
+            padding: 10px 20px;
+            font-size: 3rem;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            font-weight: bold;
+            background-color: #008000;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            color: white;
+            .download{
+                width: 5vw;
+                height: 5vw;
+            }
+        }
+    }
+
+    .connect{
+        padding: 5vw;
+        box-sizing: border-box;
+        grid-area: item6;
+        .star__background{
+            opacity: 30%;
+            position: absolute;
+            top: 0;
+            width: 8vw;
+        }
+        
+        h1{
+            padding: 2vw 0 0 2vw;
+            font-family: "Inter", Sans-serif;
+            font-size: 10vw;
+            font-weight: 600;
+            color: var(--heading__colour);
+        }
+        span{
+            font-weight: 500;
+            color: #0A58CA;
+        }
+        button {
+            font-size: 60px;
+            padding: 15px 35px; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15rem;
+            border-radius: 50%;
+            border: none;
+            background-color: transparent;
+            color: var(--content__colour);
+            right: 15vw;
+            bottom: 15vw;
+            position: absolute;
+            cursor: pointer;
+        }
+        button:hover{
+            color: var(--heading__colour);
+        }
+    }
+
+    .self__summary{
+        height: auto;
+        padding: 5vw;
+        box-sizing: border-box;
+        background: var(--box__background);
+        background-size: cover;
+        grid-area: item2;
+        h1{
+            color: var(--heading__colour);
+            font-family: "Inter", Sans-serif;
+            font-weight: 500;
+            text-transform: uppercase;
+            line-height: 2em;
+            font-size: 4rem;
+            
+        }
+        p{
+            color: var(--content__colour);
+            font-family: "Inter", Sans-serif;
+            font-size: 2rem;
+            text-align:left;
+            font-weight: 400;
+        }
+    }
+
+    .heading{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--heading__colour);
+        font-family: "Inter", Sans-serif;
+        font-size: 3rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        grid-area: heading;
+        gap: 5px;
+        h1{
+            font-size: 6rem;
+        }
+        img{
+            width: 5rem;
+            height: 5rem;
+        }
+    }
+    .star__background{
+        opacity: 30%;
+        position: absolute;
+        top: 0;
+        width: 8vw;
+    }
+
+  }

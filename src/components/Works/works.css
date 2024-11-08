@@ -1,18 +1,23 @@
 .Works {
+    width: 100%;
+    height: 80vh; /* Take full viewport height */
     padding: 1% 5%;
     box-sizing: border-box;
     display: grid;
-    grid-template-columns: 300px 1fr;
-    grid-template-rows: 70px repeat(5, 100px);
+    grid-template-columns: 0.2fr 1fr;
+    
+    /* Dynamically adjust row height based on available space */
+    grid-template-rows: 0.3fr repeat(5, minmax(0, 1fr)); 
     column-gap: 1vw;
     grid-template-areas: 
         "heading display"
-        "project1 display"
-        "project2 display"
-        "project3 display"
-        "project4 display"
-        "project5 display";
+        "project display"
+        "project display"
+        "project display"
+        "project display"
+        "project display";
 }
+
 
 .heading {
     grid-area: heading;
@@ -22,12 +27,7 @@
     justify-content: start;
     text-decoration: underline;
     padding-left: 20px;
-}
-.project1{
-    border-radius: 15px 15px 0 0;
-}
-.project5{
-    border-radius: 0 0 15px 15px;
+    font-size: 2vw;
 }
 .display {
     padding: 5px;
@@ -49,8 +49,8 @@
     justify-content: start;
     gap: 5px;
     img{
-        width: 30px;
-        height: 30px;
+        width: 1.5vw;
+        height: 1.5vw;
     }
 }
 .project__option{
@@ -65,10 +65,10 @@
     justify-content: space-between;
     h1{
         width: 100%;
-        font-size: 25px;
+        font-size: 1.5vw;
     }
     button{
-        font-size: 60px;
+        font-size: 3vw;
         color: var(--content__colour);
         background: none;
         border: none;
@@ -93,17 +93,17 @@
 /* Basic styling for the element */
 .github__source__code {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    top: 25px;
+    top: 2vw;
     right: 0;
-    width: 200px;
-    height: 80px;
+    width: 11vw;
+    height: 5vw;
     position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 5px;
+    gap: 0.5vw;
     background-color: white;
-    border-radius: 50px 0 0 50px;
+    border-radius: 5vw 0 0 5vw;
     transform: translateX(100%); /* Initially off-screen to the right */
     opacity: 0; /* Initially invisible */
     animation: slideInFromRight 0.5s ease forwards; /* Animation */
@@ -124,8 +124,8 @@
 
 .github__source__code .github_icon {
     color: black;
-    width: 50px;
-    height: 50px;
+    width: 3.5vw;
+    height: 3.5vw;
     padding: 5px;
     margin: 10px;
     box-sizing: border-box;

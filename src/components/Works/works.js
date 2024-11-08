@@ -1,86 +1,66 @@
 import React, { useState } from 'react';
 import './works.css';
-import images from '../../assets/image/image'
 import { AiFillGithub } from "react-icons/ai";
-// Example YouTube video URLs
-const video1 = 'https://www.youtube.com/embed/dQw4w9WgXcQ'; // Replace with actual URL
-const video2 = 'https://www.youtube.com/embed/3JZ_D3ELwOQ'; // Replace with actual URL
+import { urlFor } from '../../utility/imageUrl';
+import useProject from "../../Hooks/useProject";
+import useSocialLinks from "../../Hooks/useSocialLinks";
+
 
 function Works() {
   const [url, setUrl] = useState('');
 
   const handleButtonClick = (newUrl) => {
-    setUrl(newUrl);
+    // Check if the URL is a shortened YouTube link
+    const youtubeRegex = /https?:\/\/(?:www\.)?youtu\.be\/([a-zA-Z0-9_-]+)/;
+    const match = newUrl.match(youtubeRegex);
+  
+    if (match) {
+      const videoId = match[1]; // Extract the video ID
+      setUrl(`https://www.youtube.com/embed/${videoId}`); // Set the embed URL
+    } else {
+      setUrl(newUrl); // Use the original URL for non-YouTube links
+    }
   };
+  
+
   const githubclick = () => {
-    window.location.href = 'https://github.com/sha22-2001'; // Replace with your LinkedIn profile URL
-  };
+    window.open(social.github, '_blank');
+  }; 
+
+  const { data: projectdata, loading: projectLoading, error: projectError } = useProject();
+  const { data: socialLinks, loading: socialLoading, error: socialError } = useSocialLinks();
+
+  const social = socialLinks[0] || {};
 
   return (
     <div className='Works'>
       <div className="heading">Project</div>
       
-      <div className="project__option project1">
-        <div>
-          <h1>Portfolio</h1>
-          <div className="tecnology">
-            <img src={images.mongodb} alt="*" />
-            <img src={images.express} alt="*" />
-            <img src={images.react} alt="*" />
-            <img src={images.nodejs} alt="*" />
+      {projectdata.map((project, index) => (
+        <div key={index} className="project__option">
+          <div>
+            <h1>{project.title}</h1>
+            <div className="tecnology">
+              {project.technologies.map((tech, i) => (
+                tech.image && (
+                  <img
+                    key={i}
+                    src={urlFor(tech.image).url()} // Use urlFor to get the image URL
+                    alt={tech.name}
+                  />
+                )
+              ))}
+            </div>
           </div>
+          {project.mediaType === 'website' && (
+            <button onClick={() => handleButtonClick(project.websiteUrl)}>&rarr;</button>
+          )}
+          {project.mediaType === 'video' && (
+            <button onClick={() => handleButtonClick(project.videoUrl)}>&rarr;</button>
+          )}
         </div>
-        <button onClick={() => handleButtonClick('https://shayan-code-since-2001.netlify.app/')}>&rarr;</button>
-      </div>
-
-      <div className="project__option project2">
-        <div>
-          <h1>Simon Game</h1>
-          <div className="tecnology">
-              <img src={images.html} alt="*" />
-              <img src={images.css} alt="*" />
-              <img src={images.js} alt="*" />
-          </div>
-        </div>
-        <button onClick={() => handleButtonClick('https://simon2207.netlify.app/')}>&rarr;</button>
-      </div>
-
-      <div className="project__option project3">
-        <div>
-          <h1>Snake Game</h1>
-          <div className="tecnology">
-              <img src={images.html} alt="*" />
-              <img src={images.css} alt="*" />
-              <img src={images.js} alt="*" />
-          </div>
-        </div>
-        <button onClick={() => handleButtonClick('https://sha22-2001.github.io/snake.github.io/')}>&rarr;</button>
-      </div>
-
-      <div className="project__option project4">
-        <div>
-          <h1>wild Life Detection</h1>
-          <div className="tecnology">
-              <img src={images.flask} alt="*" />
-              <img src={images.python} alt="*" />
-              <img src={images.js} alt="*" />
-              <img src={images.roboflow} alt="*" />
-              <img src={images.yolo} alt="*" />
-          </div>
-        </div>
-        <button onClick={() => handleButtonClick(video1)}>&rarr;</button>
-      </div>
-      <div className="project__option project5">
-        <div>
-          <h1>Fog Computing</h1>
-          <div className="tecnology">
-              <img src={images.panda} alt="*" />
-              <img src={images.s3} alt="*" />
-              <img src={images.python} alt="*" />
-          </div>
-        </div>
-        <button onClick={() => handleButtonClick(video2)}>&rarr;</button>
-      </div>
+      ))}
+      
       <div className="display">
         {url && (
           <iframe 

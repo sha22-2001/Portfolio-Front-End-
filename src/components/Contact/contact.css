@@ -1,0 +1,259 @@
+:root{
+    --box__background: linear-gradient(310deg, #131313 0%, #202020 100%);
+    --heading__colour:white;
+    --content__colour:#989598;
+}
+.Contact {
+    width: 100%;
+    height: 80vh;
+    color: var(--heading__colour);
+    padding: 1% 5%;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 12% 1fr;
+    grid-template-rows: 10vh 10vh 30vh 20vh;
+    gap: 1vw;
+    grid-template-areas: 
+        "gmail heading"
+        "gmail msg"
+        "linkedin msg"
+        "whatsapp msg";
+
+    div{
+        border-radius: 20px;
+        box-sizing: border-box;
+    }
+}
+
+.gmail{
+    padding: 20px;
+    grid-area: gmail;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-style: italic;
+    font-family: 'Courier New', Courier, monospace;
+    background: var(--box__background);
+    cursor:pointer;
+}
+.gmail:hover{
+    background: white;
+    color: red;
+}
+.linkedin{
+    padding: 20px;
+    grid-area: linkedin;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-style: italic;
+    font-family: 'Courier New', Courier, monospace;
+    background: var(--box__background);
+    cursor:pointer;
+}
+.linkedin:hover{
+    background: #0A58CA;
+}
+.whatsapp{
+    padding: 20px;
+    grid-area: whatsapp;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-style: italic;
+    font-family: 'Courier New', Courier, monospace;
+    background: var(--box__background);
+    cursor:pointer;
+}
+.whatsapp:hover{
+    background: #25D366;
+}
+.heading {
+    margin-bottom: 20px;
+    text-decoration: none;
+}
+
+.pos_center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pos_center h1 span {
+    color: #0A58CA;
+}
+
+.msg {
+    padding: 10px;
+    grid-area: msg;
+    box-sizing: border-box;   
+    background: var(--box__background);
+    position: relative;
+}
+.contact-form{
+    border-radius: 20px;
+    box-sizing: border-box;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    
+    .form-group{
+        #name{
+            width: 100%;
+            font-size: 2rem;
+            padding: 10px;
+            box-sizing: border-box;
+            background: transparent;
+            border: transparent;
+            border-bottom: 1px dotted whitesmoke;
+            font-family: 'Courier New', Courier, monospace;
+            font-style: italic;
+            margin-bottom: 10px;
+            color: var(--heading__colour);
+        }
+        #email{
+            width: 100%;
+            font-size: large;
+            padding: 10px;
+            box-sizing: border-box;
+            background: transparent;
+            border: transparent;
+            border-bottom: 1px dotted whitesmoke;
+            font-family: 'Courier New', Courier, monospace;
+            font-style: italic;
+            margin-bottom: 10px;
+            color: var(--heading__colour);
+        }
+        #message {
+            width: 100%;
+            flex: 1; /* Allow textarea to grow and fill remaining space */
+            min-height: 250px; /* Optional: set a minimum height */
+            font-size: large;
+            padding: 10px;
+            box-sizing: border-box;
+            background: transparent;
+            border: none; /* Add a border for better visibility */
+            border-radius: 5px; /* Add rounded corners */
+            resize: none; /* Prevent resizing */
+            font-family: 'Courier New', Courier, monospace;
+            font-style: italic;
+            margin-bottom: 10px;
+            color: var(--heading__colour);
+        }
+    }
+}
+.submit-button {
+    position: absolute; /* Position button in the right corner */
+    bottom: 20px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+    padding: 10px 20px;
+    background-color: greenyellow;
+    color: black;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: larger;
+    font-weight: bolder;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.Thanks{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    font-size: 5vw;
+    color: white;
+    padding: 15px; /* Padding for better spacing */
+    border-radius: 5px; /* Rounded corners */
+    text-align: center; /* Center the text */
+    font-family: "Inter", Sans-serif;
+}
+
+@media (max-width:1024px){
+    .Contact {
+        width: 100%;
+        margin-top: 12vh;
+        height: 80vh;
+        color: var(--heading__colour);
+        padding: 1% 5%;
+        box-sizing: border-box;
+        display: grid;
+        
+        /* Adjust the columns and rows to fit the new grid structure */
+        grid-template-columns: 1fr 1fr 1fr; /* Three equal columns */
+        grid-template-rows: 10vh 20vh 30vh 10vh; /* Adjust row heights as needed */
+        gap: 1vw;
+        
+        /* Define the grid areas to match the new layout */
+        grid-template-areas: 
+            "heading heading heading"
+            "msg msg msg"
+            "msg msg msg"
+            "linkedin gmail whatsapp";
+        
+        div {
+            border-radius: 20px;
+            box-sizing: border-box;
+        }
+    }
+    .contact-form{
+        border-radius: 20px;
+        box-sizing: border-box;
+        padding: 10px;
+        width: 100%;
+        height: 100%;
+        
+        .form-group{
+            #name{
+                width: 100%;
+                font-size: 5rem;
+                padding: 10px;
+                box-sizing: border-box;
+                background: transparent;
+                border: transparent;
+                border-bottom: 1px dotted whitesmoke;
+                font-family: 'Courier New', Courier, monospace;
+                font-style: italic;
+                margin-bottom: 10px;
+                color: var(--heading__colour);
+            }
+            #email{
+                font-size: 3rem;
+                width: 100%;
+                padding: 10px;
+                box-sizing: border-box;
+                background: transparent;
+                border: transparent;
+                border-bottom: 1px dotted whitesmoke;
+                font-family: 'Courier New', Courier, monospace;
+                font-style: italic;
+                margin-bottom: 10px;
+                color: var(--heading__colour);
+            }
+            #message {
+                width: 100%;
+                flex: 1; /* Allow textarea to grow and fill remaining space */
+                min-height: 650px; /* Optional: set a minimum height */
+                font-size: 3rem;
+                padding: 10px;
+                box-sizing: border-box;
+                background: transparent;
+                border: none; /* Add a border for better visibility */
+                border-radius: 5px; /* Add rounded corners */
+                resize: none; /* Prevent resizing */
+                font-family: 'Courier New', Courier, monospace;
+                font-style: italic;
+                margin-bottom: 10px;
+                color: var(--heading__colour);
+            }
+        }
+    }
+    submit-button{
+        font-size: 3rem;
+    }
+}
